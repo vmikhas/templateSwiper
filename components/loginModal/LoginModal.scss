@@ -1,0 +1,85 @@
+.login {
+  @mixin mod($mod) {
+    @include modifier("login-modal", $mod){
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @for $i from 0 to length($mods) {
+      .login-modal_#{nth($mods, $i + 1)} & {
+        @content;
+      }
+    }
+  }
+
+  @include option(width, 800);
+  @include option(margin, 0 auto);
+
+  &__title {
+    @include option(font-size, 50);
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    user-select: none;
+  }
+
+  &__form {
+    border: 10px solid tomato;
+    @include option(border-radius, 20);
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include option(gap, 25);
+    @include option(margin, 0);
+    @include option(padding, 20 0 0);
+
+    border: none;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include option(gap, 10);
+    @include option(width, max-content);
+  }
+
+  &__label {
+    font-family: "MS Reference Sans Serif", sans-serif;
+    @include option(font-size, 40);
+  }
+
+  &__input {
+    @include option(width, 550);
+    @include option(padding, 15 25);
+
+    @include option(font-size, 35);
+    color: green;
+
+    border: 2px solid midnightblue;
+    @include option(border-radius, 10);
+
+    &_password {
+      color: black;
+    }
+  }
+
+  &__button {
+    display: block;
+    @include option(width, 400);
+    @include option(margin, 30 auto 30);
+    @include option(padding, 15 0);
+
+    font-family: "MS Reference Sans Serif", sans-serif;
+    @include option(font-size, 40);
+    color: white;
+
+    background-color: darkslategrey;
+    border: none;
+    @include option(border-radius, 20);
+    box-shadow: 0px 7px 5px -2px rgba(47, 79, 79, 0.5);
+  }
+}

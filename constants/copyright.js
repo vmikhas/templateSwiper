@@ -654,4 +654,45 @@ export const exampleContent = {
     }
   ],
   name: "arrow"
-};
+}
+
+export const loginModalContent = {
+  list: [
+    {
+      input: {
+        className: "login__input login__input_email",
+        type: "email",
+        name: "login",
+        id: "email",
+        required: true,
+        multiple: false
+      },
+      label: {
+        text: "Логин",
+        attr: {
+          className: "login__label login__label_email",
+          htmlFor: "email"
+        }
+      }
+    },
+    {
+      input: {
+        className: "login__input login__input_password",
+        type: "password",
+        name: "login",
+        id: "password",
+        minLength: 8,
+        maxLength: 24,
+        required: true
+      },
+      label: {
+        text: "Пароль",
+        attr: {
+          className: "login__label login__label_password",
+          htmlFor: "password"
+        }
+      }
+    }
+  ],
+  buttonText: "Войти"
+}
