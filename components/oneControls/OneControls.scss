@@ -1,0 +1,56 @@
+.one-controls {
+  @mixin mod($mod) {
+    @include modifier("one-controls", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @for $i from 0 to length($mods) {
+      .one-controls_#{nth($mods, $i + 1)} & {
+        @content;
+      }
+    }
+  }
+
+  position: relative;
+  @include option(padding, 0 0 30);
+  border-bottom: 3px solid saddlebrown;
+
+  &__container,
+  &__box {
+    @include option(width, 1350);
+  }
+
+  &__desc {
+    @include option(padding, 0 210 10);
+    font-family: "Lucida Fax", "Segoe Print", serif;
+    @include option(font-size, 25);
+    line-height: 130%;
+  }
+
+  &__image {
+    width: max-content;
+    @include option(height, 500);
+    @include option(margin, 0 auto);
+  }
+
+  &__button {
+    position: absolute;
+    top: 20%;
+    z-index: 500;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    @include option(height, 65);
+    fill: saddlebrown;
+
+    &_prev {
+      @include option(left, 100);
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    &_next {
+      @include option(right, 100);
+    }
+  }
+}

@@ -1,0 +1,104 @@
+.vertical-swiper {
+  @mixin mod($mod) {
+    @include modifier("vertical-swiper", $mod){
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @for $i from 0 to length($mods) {
+      .vertical-swiper_#{nth($mods, $i + 1)} & {
+        @content;
+      }
+    }
+  }
+
+  position: relative;
+
+  &__title {
+    @include option(font-size, 40);
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    user-select: none;
+  }
+
+  &__box {
+    @include option(height, 630);
+    border-bottom: 3px solid saddlebrown;
+  }
+
+  &__image {
+    width: min-content;
+    @include option(height, 400);
+    @include option(margin, 0 auto);
+    @include option(padding, 80 0);
+  }
+
+  &__button {
+    position: absolute;
+    left: 50%;
+    z-index: 500;
+    cursor: pointer;
+
+    @include option(height, 65);
+    fill: saddlebrown;
+
+    &_prev {
+      @include option(top, 60);
+      transform: translateX(-50%) rotate(270deg);
+    }
+
+    &_next {
+      @include option(bottom, 60);
+      transform: translateX(-50%) rotate(90deg);
+    }
+  }
+
+  .swiper-pagination-bullet {
+    @include option(width, 20);
+    @include option(height, 20);
+    background-color: tomato;
+  }
+
+  &__pagination {
+    position: absolute;
+    top: 50%;
+    @include option(right, 170);
+    z-index: 50;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include option(gap, 15);
+    @include option(margin, 0);
+    @include option(padding, 0);
+
+    list-style-type: none;
+  }
+
+  &__item {
+    font-size: 24px;
+    user-select: none;
+    cursor: pointer;
+
+    &_prev,
+    &_next {
+      width: 145px;
+      text-align: center;
+    }
+
+    &_active {
+      font-size: 45px;
+      color: tomato;
+    }
+
+    &.disabled {
+      color: gainsboro;
+    }
+  }
+
+  &__link {
+    padding: 5px 15px;
+  }
+}

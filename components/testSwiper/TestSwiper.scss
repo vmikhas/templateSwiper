@@ -1,0 +1,62 @@
+.test-swiper {
+  @mixin mod($mod) {
+    @include modifier("test-swiper", $mod){
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @for $i from 0 to length($mods) {
+      .test-swiper_#{nth($mods, $i + 1)} & {
+        @content;
+      }
+    }
+  }
+
+  position: relative;
+
+  &__title {
+    @include option(font-size, 40);
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    user-select: none;
+  }
+
+  &__box {
+    @include option(height, 660);
+    border-bottom: 3px solid saddlebrown;
+  }
+
+  &__image {
+    width: min-content;
+    @include option(height, 600);
+    margin: 0 auto;
+    user-select: none;
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    z-index: 500;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    @include option(height, 65);
+    fill: saddlebrown;
+
+    &_prev {
+      @include option(left, 100);
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    &_next {
+      @include option(right, 100);
+    }
+  }
+
+  .swiper-pagination-bullet {
+    @include option(width, 20);
+    @include option(height, 20);
+    background-color: tomato;
+  }
+}

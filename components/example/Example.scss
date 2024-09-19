@@ -1,0 +1,103 @@
+.example {
+  @mixin mod($mod) {
+    @include modifier("example", $mod){
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @for $i from 0 to length($mods) {
+      .example_#{nth($mods, $i + 1)} & {
+        @content;
+      }
+    }
+  }
+
+  position: relative;
+  @include option(margin, 0 0 15);
+  border-bottom: 3px solid saddlebrown;
+
+  &__title {
+    @include option(font-size, 40);
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    user-select: none;
+  }
+
+  .carousel {
+    @include option(width, 1300);
+    margin: 0 auto;
+  }
+
+  &__item {
+    @include option(height, 630);
+  }
+
+  &__image {
+    @include option(height, 500);
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-family: "Lucida Sans Unicode", sans-serif;
+    @include option(font-size, 25);
+    text-align: right;
+    color: darkgreen;
+    user-select: none;
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    z-index: 500;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    @include option(height, 65);
+    fill: darkgreen;
+
+    &_prev {
+      @include option(left, 100);
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    &_next {
+      @include option(right, 100);
+    }
+  }
+
+  &__pagination {
+    position: absolute;
+    @include option(bottom, 30);
+    left: 50%;
+    z-index: 100;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    @include option(margin, 0);
+    @include option(padding, 0);
+    list-style-type: none;
+  }
+
+  &__pagination-item {
+    font-size: 24px;
+    user-select: none;
+    cursor: pointer;
+
+    &_active {
+      font-size: 35px;
+      color: white;
+      background-color: tomato;
+      border-radius: 50px;
+    }
+
+    &.disabled {
+      color: gainsboro;
+    }
+  }
+
+  &__pagination-link {
+    padding: 5px 15px;
+  }
+}

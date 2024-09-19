@@ -1,0 +1,90 @@
+.carousel {
+  @mixin mod($mod) {
+    @include modifier("carousel-in-carousel", $mod){
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @for $i from 0 to length($mods) {
+      .carousel-in-carousel_#{nth($mods, $i + 1)} & {
+        @content;
+      }
+    }
+  }
+
+  position: relative;
+
+  .swiper-slide {
+    text-align: left !important;
+  }
+
+  &__title {
+    @include option(font-size, 40);
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    user-select: none;
+  }
+
+  &__box{
+    border-bottom: 3px solid saddlebrown;
+  }
+
+  &__item {
+    @include option(width, 1300);
+    @include option(min-height, 400);
+    margin: 0 auto;
+  }
+
+  &__subtitle {
+    @include option(padding, 0 255);
+    font-family: Symbol, sans-serif;
+    @include option(font-size, 35);
+    font-weight: 700;
+    user-select: none;
+  }
+
+  &__text {
+    font-family: "Lucida Console", sans-serif;
+    font-size: 23px;
+    line-height: 120%;
+    letter-spacing: 0.01em;
+    user-select: none;
+  }
+
+  &__images-container {
+    @include option(height, 450);
+
+    .swiper-pagination-bullet {
+      width: 20px;
+      height: 20px;
+      background-color: red;
+    }
+  }
+
+  &__image {
+    width: max-content;
+    @include option(height, 350);
+    margin: 0 auto;
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    z-index: 500;
+    cursor: pointer;
+
+    @include option(height, 65);
+    fill: saddlebrown;
+
+    &_prev {
+      @include option(left, 60);
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    &_next {
+      @include option(right, 60);
+      transform: translateY(-50%);
+    }
+  }
+}
