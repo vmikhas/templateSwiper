@@ -4,7 +4,7 @@ export const settings = {
     centeredSlides: true,
     loop: true,
     spaceBetween: 0,
-    allowTouchMove: true
+    allowTouchMove: true,
   },
 
   onMethodsExample: {

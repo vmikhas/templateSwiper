@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import * as PropTypes from "prop-types";
 import Carousel from "@/components/baseComponents/gui/carousel/Carousel";
 import ExampleImage from "@/components/example/ExampleImage";
@@ -11,7 +11,6 @@ export default function Example({images, name}) {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const handleSlideChange = ({selected}) => {
-    console.log(selected)
     setActiveSlide(selected);
   };
 
@@ -24,13 +23,16 @@ export default function Example({images, name}) {
         selectedSlide={activeSlide}
         settings={{
           ...settings.default,
-          ...{navigation: {
+          ...{
+            loop: false,
+            navigation: {
               prevEl: ".example__button_prev",
-              nextEl: ".example__button_next"
+              nextEl: ".example__button_next",
             },
             onSlideChange(swiper) {
               setActiveSlide(swiper.realIndex)
-            }}
+            }
+          }
         }}
       />
       {images?.length > 1 && <div className={"example__button example__button_prev"}>

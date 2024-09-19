@@ -624,27 +624,33 @@ export const exampleContent = {
   images: [
     {
       img: `${image("swipers/vertical/bear.jpg")}`,
-      subtitle: "Bear"
+      subtitle: "Bear",
+      alt: "Bear"
     },
     {
       img: `${image("swipers/vertical/elk.jpg")}`,
-      subtitle: "Elk"
+      subtitle: "Elk",
+      alt: "Elk"
     },
     {
       img: `${image("swipers/vertical/fox.jpg")}`,
-      subtitle: "Fox"
+      subtitle: "Fox",
+      alt: "Fox"
     },
     {
       img: `${image("swipers/vertical/leopard.jpg")}`,
-      subtitle: "Leopard"
+      subtitle: "Leopard",
+      alt: "Leopard"
     },
     {
       img: `${image("swipers/vertical/lynx.jpg")}`,
-      subtitle: "Lynx"
+      subtitle: "Lynx",
+      alt: "Lynx"
     },
     {
       img: `${image("swipers/vertical/wolf.jpg")}`,
-      subtitle: "Wolf"
+      subtitle: "Wolf",
+      alt: "Wolf"
     }
   ],
   name: "arrow"
