@@ -12,6 +12,7 @@ export default function ExampleImage({img, url, subtitle}) {
     </div>
   );
 }
+
 ExampleImage.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,

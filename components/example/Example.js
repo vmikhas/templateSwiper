@@ -4,14 +4,15 @@ import Carousel from "@/components/baseComponents/gui/carousel/Carousel";
 import ExampleImage from "@/components/example/ExampleImage";
 import Icon from "@/components/baseComponents/gui/icon/Icon";
 import ReactPaginate from "react-paginate";
+import {settings} from "@/constants/carousel-settings";
 
 
 export default function Example({images, name}) {
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const handleSlideChange = (swiper) => {
-    const newIndex = swiper.realIndex;
-    setActiveSlide(newIndex);
+  const handleSlideChange = ({selected}) => {
+    console.log(selected)
+    setActiveSlide(selected);
   };
 
   return (
@@ -20,14 +21,16 @@ export default function Example({images, name}) {
       <Carousel
         item={ExampleImage}
         itemsData={images}
+        selectedSlide={activeSlide}
         settings={{
-          navigation: {
-            prevEl: ".example__button_prev",
-            nextEl: ".example__button_next"
-          },
-          onSlideChange(swiper) {
-            setActiveSlide(swiper.realIndex)
-          }
+          ...settings.default,
+          ...{navigation: {
+              prevEl: ".example__button_prev",
+              nextEl: ".example__button_next"
+            },
+            onSlideChange(swiper) {
+              setActiveSlide(swiper.realIndex)
+            }}
         }}
       />
       {images?.length > 1 && <div className={"example__button example__button_prev"}>

@@ -8,6 +8,7 @@ import CarouselInCarousel from "@/components/carouselInCarousel/CarouselInCarous
 import OneControls from "@/components/oneControls/OneControls";
 import Example from "@/components/example/Example";
 
+
 export default function Home() {
 
   return (
