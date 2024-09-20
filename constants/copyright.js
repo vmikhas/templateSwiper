@@ -662,7 +662,7 @@ export const loginModalContent = {
       input: {
         className: "login__input login__input_email",
         type: "email",
-        name: "login",
+        name: "email",
         id: "email",
         required: true,
         multiple: false
@@ -679,7 +679,7 @@ export const loginModalContent = {
       input: {
         className: "login__input login__input_password",
         type: "password",
-        name: "login",
+        name: "password",
         id: "password",
         minLength: 8,
         maxLength: 24,
