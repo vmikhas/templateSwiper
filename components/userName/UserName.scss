@@ -1,16 +1,19 @@
-.login {
+.user {
   @mixin mod($mod) {
-    @include modifier("login-modal", $mod){
+    @include modifier("user-name", $mod){
       @content;
     }
   }
   @mixin mods($mods...) {
     @for $i from 0 to length($mods) {
-      .login-modal_#{nth($mods, $i + 1)} & {
+      .user-name_#{nth($mods, $i + 1)} & {
         @content;
       }
     }
   }
+
+  @include option(margin, 30 0);
+  border-top: 4px dashed rosybrown;
 
   &__title {
     @include option(font-size, 50);
@@ -24,7 +27,8 @@
     @include option(width, 800);
     @include option(margin, 0 auto);
 
-    border: 10px solid tomato;
+    background-color: #212121;
+    border: 10px solid #00b6ff;
     @include option(border-radius, 20);
   }
 
@@ -50,6 +54,7 @@
   &__label {
     font-family: "MS Reference Sans Serif", sans-serif;
     @include option(font-size, 40);
+    color: white;
   }
 
   &__input {
@@ -57,18 +62,27 @@
     @include option(padding, 15 25);
 
     @include option(font-size, 35);
-    color: green;
+    font-style: italic;
+    color: black;
 
-    border: 2px solid midnightblue;
+    border: 3px solid tomato;
     @include option(border-radius, 10);
 
-    &_password {
-      color: black;
+    &_age::-webkit-inner-spin-button,
+    &_age::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
 
     &:focus {
-      border-color: tomato;
+      border-color: yellow;
     }
+  }
+
+  &__error {
+    @include option(margin, 10 0 0);
+    @include option(font-size, 23);
+    color: tomato;
   }
 
   &__button {
@@ -81,10 +95,10 @@
     @include option(font-size, 40);
     color: white;
 
-    background-color: darkslategrey;
+    background-color: #00b6ff;
     border: none;
     @include option(border-radius, 20);
-    box-shadow: 0px 7px 5px -2px rgba(47, 79, 79, 0.5);
+    box-shadow: 0 7px 5px -2px rgba(0, 182, 255, 0.5);
     cursor: pointer;
 
     transition: .2s ease-in-out;

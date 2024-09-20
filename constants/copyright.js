@@ -654,7 +654,7 @@ export const exampleContent = {
     }
   ],
   name: "arrow"
-}
+};
 
 export const loginModalContent = {
   list: [
@@ -695,4 +695,88 @@ export const loginModalContent = {
     }
   ],
   buttonText: "Войти"
-}
+};
+
+export const userNameContent = {
+  list: [
+    {
+      input: {
+        attr: {
+          className: "user__input user__input_name",
+          type: "text",
+          id: "name"
+        },
+        validates: [
+          "name",
+          {
+            required: true,
+            pattern: {
+              value: /^[a-zA-Zа-яА-ЯёЁ]+$/,
+              message: "Некорректный ввод"
+            }
+          }
+        ]
+      },
+      label: {
+        text: "Имя",
+        attr: {
+          className: "user__label user__label_name",
+          htmlFor: "name"
+        }
+      }
+    },
+    {
+      input: {
+        attr: {
+          className: "user__input user__input_surname",
+          type: "text",
+          id: "surname"
+        },
+        validates: [
+          "surname",
+          {
+            required: true,
+            pattern: {
+              value: /^[a-zA-Zа-яА-ЯёЁ]+$/,
+              message: "Некорректный ввод"
+            }
+          }
+        ]
+      },
+      label: {
+        text: "Фамилия",
+        attr: {
+          className: "user__label user__label_surname",
+          htmlFor: "surname"
+        }
+      }
+    },
+    {
+      input: {
+        attr: {
+          className: "user__input user__input_age",
+          type: "number",
+          id: "age"
+        },
+        validates: [
+          "age",
+          {
+            min: 1,
+            max: 100,
+            pattern: {
+              value: /^[0-9]+$/,
+              message: "Некорректный ввод"
+            }
+          }]
+      },
+      label: {
+        text: "Возраст",
+        attr: {
+          className: "user__label user__label_age",
+          htmlFor: "age"
+        }
+      }
+    }
+  ],
+  buttonText: "Отправить"
+};

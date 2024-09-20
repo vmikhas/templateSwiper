@@ -7,7 +7,7 @@ import {
   exampleContent,
   loginModalContent,
   oneControlsContent,
-  testSwiperContent,
+  testSwiperContent, userNameContent,
   verticalSwiperContent
 } from "@/constants/copyright";
 import VerticalSwiper from "@/components/verticalSwiper/VerticalSwiper";
@@ -15,6 +15,7 @@ import CarouselInCarousel from "@/components/carouselInCarousel/CarouselInCarous
 import OneControls from "@/components/oneControls/OneControls";
 import Example from "@/components/example/Example";
 import LoginModal from "@/components/loginModal/LoginModal";
+import UserName from "@/components/userName/UserName";
 
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
       {/*<OneControls {...oneControlsContent}/>*/}
       {/*<Example {...exampleContent}/>*/}
       <LoginModal {...loginModalContent}/>
+      <UserName {...userNameContent}/>
     </div>
   );
 }
