@@ -681,7 +681,7 @@ export const loginModalContent = {
         type: "password",
         name: "password",
         id: "password",
-        minLength: 8,
+        minLength: 4,
         maxLength: 24,
         required: true
       },

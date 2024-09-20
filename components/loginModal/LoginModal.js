@@ -6,18 +6,18 @@ export default function LoginModal({list, buttonText}) {
   const [formData, setFormData] = useState({});
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const {name, value} = e.target;
     // console.log("e.target-->" + e.target);
-    console.log("name  ----->  " + name);
-    console.log("value  ----->  " + value);
-    debugger
+    // console.log("name  ----->  " + name);
+    // console.log("value  ----->  " + value);
+    // debugger
     setFormData((data) => ({
       ...data,
       [name]: value
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log("Отправлено:", formData);
     // debugger
@@ -29,7 +29,7 @@ export default function LoginModal({list, buttonText}) {
       <form className={"login__form"}
             action={"#"}
             method={"POST"}
-            onSubmit={handleSubmit}
+            onSubmit={handleFormSubmit}
       >
         <fieldset className={"login__box"} name={"login"}>
           {list.map(({input, label}, id) => (
