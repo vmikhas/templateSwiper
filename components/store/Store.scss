@@ -1,0 +1,47 @@
+.store {
+  @mixin mod($mod) {
+    @include modifier("store", $mod){
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @for $i from 0 to length($mods) {
+      .store_#{nth($mods, $i + 1)} & {
+        @content;
+      }
+    }
+  }
+
+  @include option(margin, 30 0);
+  border-top: 4px dashed rosybrown;
+
+  &__title {
+    @include option(font-size, 50);
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    user-select: none;
+  }
+
+  &__form {
+    @include option(width, 1400);
+    @include option(margin, 0 auto);
+
+    background-color: wheat;
+    border: 10px solid brown;
+    @include option(border-radius, 20);
+  }
+
+  &__group {
+    @include option(margin, 0);
+    border: none;
+  }
+
+  &__legend {
+    @include option(font-size, 35);
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+    user-select: none;
+  }
+}

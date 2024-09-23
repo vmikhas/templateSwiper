@@ -780,3 +780,629 @@ export const userNameContent = {
   ],
   buttonText: "Отправить"
 };
+
+export const storeContent = {
+  stepOne: [
+    {
+      type: "vegetables",
+      input: {
+        attr: {
+          className: "store__input store__input_radio",
+          type: "radio",
+          id: "vegetables",
+          name: "step-one"
+        },
+        validates: [
+          "step-one"
+        ]
+      },
+      label: {
+        text: "Овощи",
+        attr: {
+          className: "store__label store__label_radio",
+          htmlFor: "vegetables"
+        }
+      }
+    },
+    {
+      type: "fruits",
+      input: {
+        attr: {
+          className: "store__input store__input_radio",
+          type: "radio",
+          id: "fruits",
+          name: "step-one",
+          checked: true
+        },
+        validates: [
+          "step-one"
+        ]
+      },
+      label: {
+        text: "Фрукты",
+        attr: {
+          className: "store__label store__label_radio",
+          htmlFor: "fruits"
+        }
+      }
+    },
+    {
+      type: "bakery",
+      input: {
+        attr: {
+          className: "store__input store__input_radio",
+          type: "radio",
+          id: "bakery",
+          name: "step-one"
+        },
+        validates: [
+          "step-one"
+        ]
+      },
+      label: {
+        text: "Выпечка",
+        attr: {
+          className: "store__label store__label_radio",
+          htmlFor: "bakery"
+        }
+      }
+    },
+    {
+      type: "meat",
+      input: {
+        attr: {
+          className: "store__input store__input_radio",
+          type: "radio",
+          id: "meat",
+          name: "step-one"
+        },
+        validates: [
+          "step-one"
+        ]
+      },
+      label: {
+        text: "Мясо",
+        attr: {
+          className: "store__label store__label_radio",
+          htmlFor: "meat"
+        }
+      }
+    },
+    {
+      type: "drinks",
+      input: {
+        attr: {
+          className: "store__input store__input_radio",
+          type: "radio",
+          id: "drinks",
+          name: "step-one"
+        },
+        validates: [
+          "step-one"
+        ]
+      },
+      label: {
+        text: "Напитки",
+        attr: {
+          className: "store__label store__label_radio",
+          htmlFor: "drinks"
+        }
+      }
+    }
+  ],
+  stepTwo: {
+    vegetables: [
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "cucumbers",
+            name: "cucumbers"
+          },
+          validates: [
+            "cucumbers"
+          ]
+        },
+        label: {
+          text: "Огурцы",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "cucumbers"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "tomatoes",
+            name: "tomatoes"
+          },
+          validates: [
+            "tomatoes"
+          ]
+        },
+        label: {
+          text: "Помидоры",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "tomatoes"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "carrots",
+            name: "carrots"
+          },
+          validates: [
+            "carrots"
+          ]
+        },
+        label: {
+          text: "Морковь",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "carrots"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "onions",
+            name: "onions"
+          },
+          validates: [
+            "onions"
+          ]
+        },
+        label: {
+          text: "Лук",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "onions"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "potatoes",
+            name: "potatoes"
+          },
+          validates: [
+            "potatoes"
+          ]
+        },
+        label: {
+          text: "Картофель",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "potatoes"
+          }
+        }
+      }
+    ],
+    fruits: [
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "apples",
+            name: "apples"
+          },
+          validates: [
+            "apples"
+          ]
+        },
+        label: {
+          text: "Яблоки",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "apples"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "bananas",
+            name: "bananas"
+          },
+          validates: [
+            "bananas"
+          ]
+        },
+        label: {
+          text: "Банан",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "bananas"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "pears",
+            name: "pears"
+          },
+          validates: [
+            "pears"
+          ]
+        },
+        label: {
+          text: "Груши",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "pears"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "oranges",
+            name: "oranges"
+          },
+          validates: [
+            "oranges"
+          ]
+        },
+        label: {
+          text: "Апельсины",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "oranges"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "lemons",
+            name: "lemons"
+          },
+          validates: [
+            "lemons"
+          ]
+        },
+        label: {
+          text: "Лимоны",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "lemons"
+          }
+        }
+      }
+    ],
+    bakery: [
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "bread",
+            name: "bread"
+          },
+          validates: [
+            "bread"
+          ]
+        },
+        label: {
+          text: "Хлеб",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "bread"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "cake",
+            name: "cake"
+          },
+          validates: [
+            "cake"
+          ]
+        },
+        label: {
+          text: "Торт",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "cake"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "pancakes",
+            name: "pancakes"
+          },
+          validates: [
+            "pancakes"
+          ]
+        },
+        label: {
+          text: "Блинчики",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "pancakes"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "cookies",
+            name: "cookies"
+          },
+          validates: [
+            "cookies"
+          ]
+        },
+        label: {
+          text: "Печенье",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "cookies"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "cupcakes",
+            name: "cupcakes"
+          },
+          validates: [
+            "cupcakes"
+          ]
+        },
+        label: {
+          text: "Кексы",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "cupcakes"
+          }
+        }
+      }
+    ],
+    meat: [
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "beef",
+            name: "beef"
+          },
+          validates: [
+            "beef"
+          ]
+        },
+        label: {
+          text: "Говядина",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "beef"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "pork",
+            name: "pork"
+          },
+          validates: [
+            "pork"
+          ]
+        },
+        label: {
+          text: "Свинина",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "pork"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "chicken",
+            name: "chicken"
+          },
+          validates: [
+            "chicken"
+          ]
+        },
+        label: {
+          text: "Курица",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "chicken"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "mutton",
+            name: "mutton"
+          },
+          validates: [
+            "mutton"
+          ]
+        },
+        label: {
+          text: "Баранина",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "mutton"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "fish",
+            name: "fish"
+          },
+          validates: [
+            "fish"
+          ]
+        },
+        label: {
+          text: "Рыба",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "fish"
+          }
+        }
+      }
+    ],
+    drinks: [
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "tea",
+            name: "tea"
+          },
+          validates: [
+            "tea"
+          ]
+        },
+        label: {
+          text: "Чай",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "tea"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "coffee",
+            name: "coffee"
+          },
+          validates: [
+            "coffee"
+          ]
+        },
+        label: {
+          text: "Кофе",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "coffee"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "juice",
+            name: "juice"
+          },
+          validates: [
+            "juice"
+          ]
+        },
+        label: {
+          text: "Сок",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "juice"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "lemonade",
+            name: "lemonade"
+          },
+          validates: [
+            "lemonade"
+          ]
+        },
+        label: {
+          text: "Лимонад",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "lemonade"
+          }
+        }
+      },
+      {
+        input: {
+          attr: {
+            className: "store__input store__input_checkbox",
+            type: "checkbox",
+            id: "milk",
+            name: "milk"
+          },
+          validates: [
+            "milk"
+          ]
+        },
+        label: {
+          text: "Молоко",
+          attr: {
+            className: "store__label store__label_checkbox",
+            htmlFor: "milk"
+          }
+        }
+      }
+    ]
+  },
+  legendStepOne: "Выберите категорию",
+  legendStepTwo: "Выберите товар",
+  button: "В корзину"
+};

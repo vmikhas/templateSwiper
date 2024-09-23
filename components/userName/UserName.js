@@ -3,13 +3,14 @@ import {useForm} from "react-hook-form";
 
 
 export default function UserName({list, buttonText}) {
-  const {register, handleSubmit, formState: {errors}, setValue} = useForm({
-    mode: "onChange"
+  const {register, handleSubmit, formState: {errors}} = useForm({
+    mode: "onChange",
+    defaultValues: {
+      name: "Ivan",
+    }
   });
 
   // const emailError = formState.errors["name"]?.message;
-  setValue("name", "Иван");
-  setValue("surname", "Иванов");
   const onSubmit = (data) => {
     console.log(data);
   };
