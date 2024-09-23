@@ -65,7 +65,7 @@
     font-style: italic;
     color: black;
 
-    border: 3px solid tomato;
+    border: 3px solid #00b6ff;
     @include option(border-radius, 10);
 
     &_age::-webkit-inner-spin-button,
@@ -77,11 +77,16 @@
     &:focus {
       border-color: yellow;
     }
+
+    &:invalid {
+      border-color: tomato;
+    }
   }
 
   &__error {
     @include option(margin, 10 0 0);
     @include option(font-size, 23);
+    text-align: left;
     color: tomato;
   }
 

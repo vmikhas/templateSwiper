@@ -3,12 +3,13 @@ import {useForm} from "react-hook-form";
 
 
 export default function UserName({list, buttonText}) {
-  const {register, handleSubmit, formState: {errors}} = useForm({
+  const {register, handleSubmit, formState: {errors}, setValue} = useForm({
     mode: "onChange"
   });
 
   // const emailError = formState.errors["name"]?.message;
-
+  setValue("name", "Иван");
+  setValue("surname", "Иванов");
   const onSubmit = (data) => {
     console.log(data);
   };
@@ -25,17 +26,12 @@ export default function UserName({list, buttonText}) {
           {list.map(({input, label}, id) => (
             <div className={`user__item user__item_${id + 1}`} key={id}>
               {label && <label {...label.attr}>{label.text}</label>}
-              {input && <input
-                {...input.attr}
-                {...register(
-                  ...input.validates
-                )}
-              />}
-              {/*{emailError && <p className={"user__error"}>{emailError}</p>}*/}
-              {errors.name && <p className={"user__error"}>{errors.name.message}</p>}
-              {errors.surname && <p className={"user__error"}>{errors.surname.message}</p>}
+              {input && <input{...input.attr}{...register(...input.validates)}/>}
             </div>
           ))}
+          {errors.name && <p className={"user__error"}>{errors.name.message}</p>}
+          {errors.surname && <p className={"user__error"}>{errors.surname.message}</p>}
+          {/*{emailError && <p className={"user__error"}>{emailError}</p>}*/}
         </fieldset>
         <button className={"user__button"} type={"submit"}>{buttonText}</button>
       </form>
