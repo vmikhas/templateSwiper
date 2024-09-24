@@ -3,7 +3,7 @@ import * as PropTypes from "prop-types";
 import {Controller, useForm} from "react-hook-form";
 
 
-export default function Store({stepOne, stepTwo, legendStepOne, legendStepTwo, button}) {
+export default function Store({stepOne, stepTwo, legendStepOne, legendStepTwo, button, legendAddress, addressInput}) {
   const {handleSubmit, control, setValue} = useForm();
   const [selectedStepOne, setSelectedStepOne] = useState(stepOne[2].type);
   const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
@@ -17,7 +17,7 @@ export default function Store({stepOne, stepTwo, legendStepOne, legendStepTwo, b
       ...data,
       stepTwo: selectedCheckboxes
     };
-    console.log("Form submitted", formData);
+    console.log("Выбранные продукты и адрес доставки", formData);
   };
 
   const handleRadioChange = (value) => {
@@ -40,35 +40,38 @@ export default function Store({stepOne, stepTwo, legendStepOne, legendStepTwo, b
 
         <fieldset className={"store__group store__group_radio"} name={"step-one"}>
           <legend className={"store__legend"}>{legendStepOne}</legend>
-          <Controller
-            control={control}
-            name="stepOne"
-            render={({field: {onChange, value}}) => (
-              stepOne.map(({input, label, type}, id) => (
-                <div className={"store__item store__item_radio"} key={id}>
-                  <input
-                    {...input.attr}
-                    value={type}
-                    checked={value === type}
-                    onChange={(e) => {
-                      onChange(e.target.value);
-                      handleRadioChange(e.target.value);
-                    }}
-                  />
-                  <label {...label.attr}>{label.text}</label>
-                </div>
-              ))
-            )}
-          />
+          <ul className={"store__list store__list_radio"}>
+            <Controller
+              control={control}
+              name="stepOne"
+              render={({field: {onChange, value}}) => (
+                stepOne.map(({input, label, type}, id) => (
+                  <li className={"store__item store__item_radio"} key={id}>
+                    <input
+                      {...input.attr}
+                      value={type}
+                      checked={value === type}
+                      onChange={(e) => {
+                        handleRadioChange(e.target.value);
+                        onChange?.(e.target.value);
+                      }}
+                    />
+                    <label {...label.attr}>{label.text}</label>
+                  </li>
+                ))
+              )}
+            />
+          </ul>
         </fieldset>
 
         <fieldset className={"store__group store__group_checkbox"} name={"step-two"}>
           <legend className={"store__legend"}>{legendStepTwo}</legend>
-          <Controller
-            control={control}
-            name="stepTwo"
-            render={({field: {onChange, value}}) => (
-              stepTwo[selectedStepOne].map(({input, label}, id) => (
+          <ul className={"store__list store__list_checkbox"}>
+            <Controller
+              control={control}
+              name="stepTwo"
+              render={({field: {onChange, value}}) => (
+                stepTwo[selectedStepOne].map(({input, label}, id) => (
                   <div className={"store__item store__item_checkbox"} key={id}>
                     <input
                       {...input.attr}
@@ -79,11 +82,31 @@ export default function Store({stepOne, stepTwo, legendStepOne, legendStepTwo, b
                     <label {...label.attr}>{label.text}</label>
                   </div>
                 ))
+              )}
+            />
+          </ul>
+        </fieldset>
+
+        <button type="submit" className="store__button">{button}</button>
+
+        <fieldset className={"store__group"} name={"address"}>
+          <legend className={"store__legend"}>{legendAddress}</legend>
+          <Controller
+            control={control}
+            name={addressInput.name}
+            rules={{...addressInput.validates}}
+            render={({field}) => (
+              <label className={"store__text"}>
+                {addressInput.label}
+                <input
+                  {...field}
+                  {...addressInput.attr}
+                  value ={field.value ?? ""}
+                />
+              </label>
             )}
           />
         </fieldset>
-
-        <button type="submit" className="store__submit">{button}</button>
       </form>
     </div>
   );

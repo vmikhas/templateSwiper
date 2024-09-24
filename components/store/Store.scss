@@ -24,7 +24,7 @@
   }
 
   &__form {
-    @include option(width, 1400);
+    @include option(width, 800);
     @include option(margin, 0 auto);
 
     background-color: wheat;
@@ -35,13 +35,177 @@
   &__group {
     @include option(margin, 0);
     border: none;
+
+    &_checkbox {
+      @include option(padding, 20 170 20);
+    }
   }
 
   &__legend {
+    @include option(padding, 20 0 0);
     @include option(font-size, 35);
     font-weight: 600;
     line-height: 1.4;
     text-align: center;
     user-select: none;
+  }
+
+  &__list {
+    @include option(margin, 0);
+    @include option(padding, 0);
+    list-style-type: none;
+
+    &_radio {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      @include option(gap, 30);
+
+      @include option(margin, 0 20);
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &_checkbox:not(:last-child) {
+      @include option(margin, 0 0 10)
+    }
+  }
+
+  &__input {
+    appearance: none;
+    user-select: none;
+    cursor: pointer;
+
+    &_radio {
+      &::before {
+        content: "";
+        position: absolute;
+        @include option(top, -5);
+        left: 0;
+
+        display: block;
+        @include option(width, 25);
+        @include option(height, 25);
+
+        border: 5px solid brown;
+        border-radius: 50%;
+      }
+
+      &:checked::after{
+        content: "";
+        position: absolute;
+        @include option(top, 6);
+        @include option(left, 11);
+
+        display: block;
+        @include option(width, 19);
+        @include option(height, 19);
+
+        background-color: black;
+        border-radius: 50%;
+      }
+    }
+
+    &_checkbox {
+      &::before {
+        content: "";
+        position: absolute;
+        @include option(top, -5);
+        left: 0;
+
+        display: block;
+        @include option(width, 25);
+        @include option(height, 25);
+
+        border: 5px solid brown;
+        border-radius: 3px;
+      }
+
+      &:checked::after{
+        content: "";
+        position: absolute;
+        @include option(top, 5);
+        @include option(left, 11);
+
+        display: block;
+        @include option(width, 21);
+        @include option(height, 21);
+
+        background-color: black;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  &__label {
+    @include option(padding, 10 10 10 50);
+
+    font-family: "Leelawadee UI Semilight", sans-serif;
+    @include option(font-size, 30);
+
+    user-select: none;
+    cursor: pointer;
+  }
+
+  &__button {
+    display: block;
+    @include option(width, 400);
+    @include option(margin, 10 auto 0);
+    @include option(padding, 15 10);
+
+    @include option(font-size, 30);
+    color: white;
+
+    background-color: brown;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: .2s ease-in-out;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    @include option(gap, 15);
+    @include option(width, max-content);
+    @include option(margin, 20 auto 20);
+
+    font-family: "Leelawadee UI Semilight", sans-serif;
+    @include option(font-size, 30);
+
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__address {
+    @include option(width, 500);
+    @include option(padding, 10 20);
+
+    border: 3px solid brown;
+    @include option(border-radius, 10);
+
+    &::placeholder {
+      @include option(font-size, 25);
+      font-style: italic;
+    }
+
+    &:focus {
+      border-color: yellow;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
   }
 }

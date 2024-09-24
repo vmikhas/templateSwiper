@@ -1,4 +1,5 @@
 import {image} from "@/utils/data/baseUrl";
+import Contacts from "@/components/contacts/Contacts";
 
 
 export const header = {
@@ -811,8 +812,7 @@ export const storeContent = {
           className: "store__input store__input_radio",
           type: "radio",
           id: "fruits",
-          name: "step-one",
-          checked: true
+          name: "step-one"
         },
         validates: [
           "step-one"
@@ -1404,5 +1404,42 @@ export const storeContent = {
   },
   legendStepOne: "Выберите категорию",
   legendStepTwo: "Выберите товар",
-  button: "В корзину"
+  button: "В корзину",
+  legendAddress: "Куда доставить?",
+  addressInput: {
+    name: "address",
+    attr: {
+      className: "store__address",
+      type: "text",
+      placeholder: "ул.Пушкина, д.1, кв.1"
+    },
+    validates: {
+      required: true,
+      min: 5,
+      max: 100,
+      pattern: /^[\sа-яА-ЯёЁ0-9.,-]+$/,
+    },
+    label: "Адрес"
+  }
 };
+
+export const contactsContent = {
+  legendAddress: "Пользователь",
+  addressInput: {
+    name: "firstName",
+    attr: {
+      className: "store__address",
+      type: "text",
+      placeholder: "Александр"
+    },
+    validates: {
+      required: true,
+      pattern: {
+        value: /^[а-яА-ЯёЁa-zA-Z]+$/,
+        message: "Введите корректное имя"
+      },
+    },
+    label: "Имя"
+  },
+  button: "Отправить"
+}

@@ -3,7 +3,7 @@ import PageDescription from "../components/baseComponents/head/pageDescription/P
 import defaultPage from "../constants/page-description";
 import TestSwiper from "@/components/testSwiper/TestSwiper";
 import {
-  carouselContent,
+  carouselContent, contactsContent,
   exampleContent,
   loginModalContent,
   oneControlsContent, storeContent,
@@ -17,6 +17,7 @@ import Example from "@/components/example/Example";
 import LoginModal from "@/components/loginModal/LoginModal";
 import UserName from "@/components/userName/UserName";
 import Store from "@/components/store/Store";
+import Contacts from "@/components/contacts/Contacts";
 
 
 export default function Home() {
@@ -30,8 +31,9 @@ export default function Home() {
       {/*<OneControls {...oneControlsContent}/>*/}
       {/*<Example {...exampleContent}/>*/}
       {/*<LoginModal {...loginModalContent}/>*/}
-      <UserName {...userNameContent}/>
+      {/*<UserName {...userNameContent}/>*/}
       <Store {...storeContent}/>
+      <Contacts {...contactsContent}/>
     </div>
   );
 }

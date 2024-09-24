@@ -1,0 +1,94 @@
+.contacts {
+  @mixin mod($mod) {
+    @include modifier("contacts", $mod){
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @for $i from 0 to length($mods) {
+      .contacts_#{nth($mods, $i + 1)} & {
+        @content;
+      }
+    }
+  }
+
+  @include option(margin, 30 0);
+  border-top: 4px dashed rosybrown;
+
+  &__title {
+    @include option(font-size, 50);
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    user-select: none;
+  }
+
+  &__form {
+    @include option(width, 800);
+    @include option(margin, 0 auto);
+
+    background-color: wheat;
+    border: 10px solid brown;
+    @include option(border-radius, 20);
+  }
+
+  &__group {
+    @include option(margin, 0);
+    border: none;
+  }
+
+  &__legend {
+    @include option(padding, 20 0 0);
+    @include option(font-size, 35);
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+    user-select: none;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    @include option(gap, 15);
+    @include option(width, max-content);
+    @include option(margin, 20 auto 20);
+
+    font-family: "Leelawadee UI Semilight", sans-serif;
+    @include option(font-size, 30);
+
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__error {
+    @include option(margin, 0);
+    @include option(font-size, 22);
+    text-align: center;
+    color: red;
+  }
+
+  &__button {
+    display: block;
+    @include option(width, 400);
+    @include option(margin, 0 auto 20);
+    @include option(padding, 15 10);
+
+    @include option(font-size, 30);
+    color: white;
+
+    background-color: brown;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: .2s ease-in-out;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}
