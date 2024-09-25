@@ -1,0 +1,127 @@
+.book {
+  @mixin mod($mod) {
+    @include modifier("favorite-book", $mod){
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @for $i from 0 to length($mods) {
+      .favorite-book_#{nth($mods, $i + 1)} & {
+        @content;
+      }
+    }
+  }
+
+  @include option(margin, 30 0);
+  border-top: 4px dashed rosybrown;
+
+  &__title {
+    @include option(font-size, 50);
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    user-select: none;
+  }
+
+  &__form {
+    @include option(width, 800);
+    @include option(margin, 0 auto);
+
+    background-color: black;
+    border: 10px solid lightskyblue;
+    @include option(border-radius, 20);
+  }
+
+  .input {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    margin: 0 auto;
+
+    &__error {
+      font-size: 14px;
+      color: tomato;
+      input {
+        border-color: tomato;
+      }
+    }
+  }
+
+  .input__name {
+    @include option(padding, 20);
+    @include option(font-size, 30);
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    @include option(width, max-content);
+    @include option(margin, 0 auto);
+    @include option(padding, 0);
+    @include option(font-size, 30);
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__label-text {
+    @include option(margin, 20 0 20);
+  }
+
+  &__input {
+    @include option(width, 550);
+    @include option(margin, 0 auto);
+    @include option(padding, 15 25);
+
+    @include option(font-size, 35);
+    font-style: italic;
+    color: black;
+
+    border: 3px solid lightskyblue;
+    @include option(border-radius, 10);
+
+    &_age::-webkit-inner-spin-button,
+    &_age::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &:focus {
+      border-color: yellow;
+    }
+
+    &:invalid {
+      border-color: tomato;
+    }
+  }
+
+  &__button {
+    display: block;
+    @include option(width, 400);
+    @include option(margin, 30 auto);
+    @include option(padding, 15 10);
+
+    @include option(font-size, 30);
+    color: white;
+
+    background-color: lightskyblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: .2s ease-in-out;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}

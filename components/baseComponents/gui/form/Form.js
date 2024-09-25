@@ -5,6 +5,7 @@ import {useForm} from "react-hook-form";
 import {ErrorMessage} from "@hookform/error-message";
 import {password} from "../../../../constants/form";
 
+
 const renderMultipleErrors = ({message, messages}) => {
   messages = messages || [message]; //todo: сделать через if?
   return (
@@ -17,30 +18,24 @@ const renderMultipleErrors = ({message, messages}) => {
   );
 };
 
-const Form = forwardRef(
-  (
-    {
-      as = "form",
-      useFormProps,
-      errors: externalErrors,
-      isLocalErrors = true,
-      isGlobalErrors = false,
-      children,
-      onWatch,
-      onValidation,
-      onError,
-      onSubmit,
-      form,
-      slots,
-      ...rest
-    },
-    ref
-  ) => {
+const Form = forwardRef(({
+                           as = "form",
+                           useFormProps,
+                           errors: externalErrors,
+                           isLocalErrors = true,
+                           isGlobalErrors = false,
+                           children,
+                           onWatch,
+                           onValidation,
+                           onError, onSubmit,
+                           form,
+                           slots,
+                           ...rest
+                         },
+                         ref) => {
+
     const formController = useForm(useFormProps);
-    const {
-      formState: {errors}, setError,
-      register, watch, control, handleSubmit, trigger, reset, formState, getValues
-    } = form || formController;
+    const {formState: {errors}, setError, register, watch, control, handleSubmit, trigger, reset, formState, getValues} = form || formController;
 
     const result = watch();
 
@@ -177,7 +172,7 @@ Form.propTypes = {
   errors: PropTypes.object,
   children: PropTypes.array,
   onValidation: PropTypes.func,
-  form: PropTypes.object,
+  form: PropTypes.object
 };
 Form.displayName = "Form";
 export default Form;

@@ -1417,7 +1417,7 @@ export const storeContent = {
       required: true,
       min: 5,
       max: 100,
-      pattern: /^[\sа-яА-ЯёЁ0-9.,-]+$/,
+      pattern: /^[\sа-яА-ЯёЁ0-9.,-]+$/
     },
     label: "Адрес"
   }
@@ -1437,9 +1437,32 @@ export const contactsContent = {
       pattern: {
         value: /^[а-яА-ЯёЁa-zA-Z]+$/,
         message: "Введите корректное имя"
-      },
+      }
     },
     label: "Имя"
   },
   button: "Отправить"
-}
+};
+
+export const bookContent = {
+  title: "Favorite book",
+  className: "book__input",
+  type: "text",
+  name: {
+    author: "author",
+    book: "book"
+  },
+  label: {
+    author: "Любимый автор",
+    book: "Любимая книга",
+  },
+  validates: {
+    minLength: 1,
+    maxLength: 100,
+    required: true,
+    pattern: /^[\sа-яА-Я0-9.,-]+$/
+  },
+  button: "Отправить"
+
+
+};

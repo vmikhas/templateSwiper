@@ -3,6 +3,7 @@ import PageDescription from "../components/baseComponents/head/pageDescription/P
 import defaultPage from "../constants/page-description";
 import TestSwiper from "@/components/testSwiper/TestSwiper";
 import {
+  bookContent,
   carouselContent, contactsContent,
   exampleContent,
   loginModalContent,
@@ -18,6 +19,7 @@ import LoginModal from "@/components/loginModal/LoginModal";
 import UserName from "@/components/userName/UserName";
 import Store from "@/components/store/Store";
 import Contacts from "@/components/contacts/Contacts";
+import FavoriteBook from "@/components/favoriteBook/FavoriteBook";
 
 
 export default function Home() {
@@ -32,8 +34,9 @@ export default function Home() {
       {/*<Example {...exampleContent}/>*/}
       {/*<LoginModal {...loginModalContent}/>*/}
       {/*<UserName {...userNameContent}/>*/}
-      <Store {...storeContent}/>
-      <Contacts {...contactsContent}/>
+      {/*<Store {...storeContent}/>*/}
+      {/*<Contacts {...contactsContent}/>*/}
+      <FavoriteBook {...bookContent}/>
     </div>
   );
 }
