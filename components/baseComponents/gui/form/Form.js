@@ -37,6 +37,8 @@ const Form = forwardRef(({
     const formController = useForm(useFormProps);
     const {formState: {errors}, setError, register, watch, control, handleSubmit, trigger, reset, formState, getValues} = form || formController;
 
+    console.log("formController ----- ", formController);
+
     const result = watch();
 
     useDeepCompareEffect(() => {
@@ -71,6 +73,7 @@ const Form = forwardRef(({
     let newChildren = React.Children.map(children, initInput);
 
     function initInput(child) {
+      console.log("initInput", child);
       if (!child?.props?.name) {
         return child;
       }
