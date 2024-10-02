@@ -26,16 +26,16 @@ export default function Home() {
 
   return (
     <div className="container">
-      {/*<PageDescription {...defaultPage}/>*/}
-      {/*<TestSwiper {...testSwiperContent}/>*/}
-      {/*<VerticalSwiper {...verticalSwiperContent}/>*/}
-      {/*<CarouselInCarousel {...carouselContent}/>*/}
-      {/*<OneControls {...oneControlsContent}/>*/}
-      {/*<Example {...exampleContent}/>*/}
-      {/*<LoginModal {...loginModalContent}/>*/}
-      {/*<UserName {...userNameContent}/>*/}
-      {/*<Store {...storeContent}/>*/}
-      {/*<Contacts {...contactsContent}/>*/}
+      <PageDescription {...defaultPage}/>
+      <TestSwiper {...testSwiperContent}/>
+      <VerticalSwiper {...verticalSwiperContent}/>
+      <CarouselInCarousel {...carouselContent}/>
+      <OneControls {...oneControlsContent}/>
+      <Example {...exampleContent}/>
+      <LoginModal {...loginModalContent}/>
+      <UserName {...userNameContent}/>
+      <Store {...storeContent}/>
+      <Contacts {...contactsContent}/>
       <FavoriteBook {...bookContent}/>
     </div>
   );

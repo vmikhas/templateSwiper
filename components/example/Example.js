@@ -11,6 +11,8 @@ export default function Example({images, name}) {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const handleSlideChange = ({selected}) => {
+    // console.dir(...args)
+    // debugger;
     setActiveSlide(selected);
   };
 
@@ -30,6 +32,8 @@ export default function Example({images, name}) {
               nextEl: ".example__button_next",
             },
             onSlideChange(swiper) {
+              // console.log(swiper);
+              // debugger;
               setActiveSlide(swiper.realIndex)
             }
           }
